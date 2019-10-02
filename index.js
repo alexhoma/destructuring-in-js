@@ -46,8 +46,8 @@
 
 // Skip array elements
 // const array = [1, 2, 3];
-// const [, , third] = array;
-// console.log(third);
+// const [, , x] = array;
+// console.log(x);
 
 // Works with any iterable value (not only arrays)
 // const myIterableValue = new Set()
@@ -156,9 +156,6 @@
 // ] = nuts;
 // console.log(length);
 
-// const [, , { name }] = nuts;
-// console.log(name);
-
 // const [[name]] = nuts;
 // console.log(name);
 
@@ -170,10 +167,15 @@
 // ----------------------------------
 // 5. 🎱🎱🎱 Rest syntax
 
-// In destructuring
+// Destructuring arrays
 // const nuts = ["peanut", "cashewnut", "chesnut", "tunaep"];
 // const [firstNut, ...otherNuts] = nuts;
 // console.log(firstNut, otherNuts);
+
+// Destructuring objects
+// const object = { name: "peanut", shell: true, color: "brown" };
+// const { name, ...otherObjectProps } = object;
+// console.log(name, otherObjectProps);
 
 // In arguments
 // function giveMeNuts(...nuts) {
@@ -193,18 +195,13 @@
 // Combining arrays
 // const firstArray = ["peanut"];
 // const secondArray = ["pepeanut"];
-// const combinedArray = [...firstArray, ...secondArray, "hazlenut"];
+// const combinedArray = [...firstArray, ...secondArray, "peanut"];
 // console.log(combinedArray);
 
 // Combining arrays with strings
 // const someString = "peanut";
 // const combinedArray = [1, 2, ...someString];
 // console.log(combinedArray);
-
-// Destructuring objects
-// const object = { name: "peanut", shell: true, color: "brown" };
-// const { name, ...otherObjectProps } = object;
-// console.log(name, otherObjectProps);
 
 // Cloning objects
 // const object = {name: "peanut"};
@@ -223,10 +220,11 @@
 // const combinedObject = { ...firstObject, ...secondObject };
 // console.log(combinedObject);
 
-// Destructuring arguments of a function call
+// Spreading arguments of a function call
 // const helloNut = (name, color) => `Hello ${color} ${name}`;
 // const nut = ["Peanut", "brown"];
 // const result = helloNut(...nut);
+// const result = helloNut(nut[0], nut[1]);
 // console.log(result);
 
 // ----------------------------------
@@ -235,5 +233,5 @@
 // function giveMeNuts(...nuts /* rest syntax */) {
 //   return nuts.map(nut => `${nut}nut`);
 // }
-// console.log(giveMeNuts(...nuts /* spread syntax */, "cashew"));
+// console.log(giveMeNuts(...nuts, "cashew"));
 // console.log(giveMeNuts(nuts[0], nuts[1], nuts[2], "cashew"));
